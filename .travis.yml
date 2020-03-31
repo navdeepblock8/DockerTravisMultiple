@@ -8,12 +8,12 @@ script:
     - docker run -e CI=true navdeepduvedi/react-test npm test
     #- docker run navdeepduvedi/react-test npm test -- --coverage
 after_success:
-    - docker build -t navdeepduvedi/multi-client ./client
+    - docker build -t navdeepduvedi/multi-frontend ./client
     - docker build -t navdeepduvedi/multi-nginx ./nginx
     - docker build -t navdeepduvedi/multi-server ./server
     - docker build -t navdeepduvedi/multi-worker ./worker
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    - docker push navdeepduvedi/react-test/multi-client
+    - docker push navdeepduvedi/react-test/multi-frontend
     - docker push navdeepduvedi/react-test/multi-nginx
     - docker push navdeepduvedi/react-test/multi-server
     - docker push navdeepduvedi/react-test/multi-worker                 
