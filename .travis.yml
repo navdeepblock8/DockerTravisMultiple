@@ -13,7 +13,7 @@ after_success:
     - docker build -t navdeepduvedi/multi-server ./server
     - docker build -t navdeepduvedi/multi-worker ./worker
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-    - docker push navdeepduvedi/react-test/multi-frontend
-    - docker push navdeepduvedi/react-test/multi-nginx
-    - docker push navdeepduvedi/react-test/multi-server
-    - docker push navdeepduvedi/react-test/multi-worker                 
+    - docker push navdeepduvedi/multi-frontend
+    - docker push navdeepduvedi/multi-nginx
+    - docker push navdeepduvedi/multi-server
+    - docker push navdeepduvedi/multi-worker                 
